@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="Styles\styles.css">
+		<link rel="preload" href="Scripts\script.js" as="script">
+		<script>
+			Number.prototype.pad = function(n) {
+			  for (var r = this.toString(); r.length < n; r = 0 + r);
+			  return r;
+			};
+
+			function updateClock() {
+			  var now = new Date();
+			  var sec = now.getSeconds(),
+				min = now.getMinutes(),
+				hou = now.getHours(),
+				mo = now.getMonth()+1,
+				dy = now.getDate(),
+				yr = now.getFullYear();
+
+			  var tags = ["mon", "d", "y", "h", "m", "s"],
+				corr = [dy.pad(2), mo.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2)];
+			  for (var i = 0; i < tags.length; i++)
+				document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+			}
+
+			function initClock() {
+			  updateClock();
+			  window.setInterval("updateClock()", 1);
+			}
+		</script>
+	</head>
+
+
+<body onLoad="initClock()">
+
+	<header style="display: flex; justify-content: center; margin-bottom: 15px;">
+	  <div id="timedate">
+		
+		<div id="time">
+		  <a id="h">00</a>
+		  <div id="time-colons">:</div>
+		  <a id="m">00</a>
+		  <div id="time-colons">:</div>
+		  <a id="s">00</a>
+		</div>
+
+		<div id="date">
+		  <a id="mon">00</a> ⋅
+		  <a id="d">00</a> ⋅
+		  <a id="y">0000</a>
+		
+		  <div id="annotations">
+			<div id="anno-D">D</div>
+			<div id="anno-M">M</div>
+			<div id="anno-Y">Y</div>
+		  </div>
+		</div>
+	  </div>
+	</header>
+
+	<main>
+		<div class="menu">
+			 <button id="ButtonGENERAL">GENERAL</button>
+				<dialog>
+					<div class="tray">
+						<div class="bookmark-group">
+							<div class="group-label">LOADOUT</div>
+
+							<div class="bookmark" id="daily">
+							  <a href="https://www.accuweather.com/en/us/charlotte/28202/hourly-weather-forecast/349818">Daily</a>
+							</div>
+
+							<div class="bookmark" id="weekly" style="left: 185px;">
+							   <a href="https://www.accuweather.com/en/us/charlotte/28202/daily-weather-forecast/349818">Weekly</a>
+							</div>
+
+							<div class="bookmark" id="pollen" style="left: 308px;">
+							   <a href="https://www.carolinaasthma.com/pollen-mold-counts/">Pollen</a>
+							</div>
+							 
+							<div class="bookmark" id="tasks" style="left: 431px;">
+							   <a href="https://mytasksapp.com/app/">Tasks</a>
+							</div>
+						   
+							<div class="bookmark" id="planner" style="left: 554px;">
+							   <a href="https://docs.google.com/spreadsheets/d/11gnvB_EQG75a4Ph3R_zG2l8VzPYUtfhvfkb45qLZj5E/edit#gid=1897437639">Planner</a>
+							</div>
+							 
+							<div class="bookmark" style="left: 677px;">
+							   <a href="#">:)</a>
+							</div>
+
+						</div>
+					</div>
+				</dialog>
+
+
+			 <button>PROFESSIONAL</button>
+
+			 <button>FINANCIAL</button>
+
+			 <button>REFERENCE</button>
+
+			 <button>BUREAUCRATIC</button>
+
+		</div>
+
+		<div class="tray"></div>
+
+	</main>
+	
+
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+body {
+  font-family: "Dosis", sans-serif;
+  background-color: #3c0f0b;
+  padding-bottom: 30px;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+#timedate {
+  display: flex;
+  width: fit-content;
+  background-color: black;
+  padding: 5px 50px 10px 49px;
+  margin: -40px 0 30px 0;
+  border-radius: 62px;
+}
+	#time {
+	  width: 350px;
+	  color: lightgoldenrodyellow;
+	  font-size: 76px;
+	}
+	  #time-colons {
+		display: inline-block;
+		position: relative;
+		top: -8px;
+		color: goldenrod;
+	  }
+
+	#date {
+	  align-self: right;
+	  color: gold;
+	  font-size: 36px;
+	  padding-top: 18px;
+	}
+	  #annotations {
+		display: block;
+		position: relative;
+		top: -10px;
+		font-size: 14px;
+		font-weight: 800;
+		color: chocolate;
+	  }
+		#anno-D {
+		  display: inline-block;
+		  position: relative;
+		  left: 13px;
+		}
+		#anno-M {
+		  display: inline-block;
+		  position: relative;
+		  left: 63px;
+		}
+		#anno-Y {
+		  display: inline-block;
+		  position: relative;
+		  left: 130px;
+		}
+
+
+
+.bookmark-groups {
+  color: goldenrod;
+  font-size: 28px;
+  padding-left: 50px;
+}
+
+section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  z-index: 0;
+  color: white;
+}
+	section:after {
+	  display: block;
+	  position: absolute;
+	  left: -425px;
+	  margin-top: 43px;
+	  background-color: #240907;
+	  height: 100%;
+	  width: 155%;
+	  z-index: 0;
+	  outline: none;
+	  border-radius: 25px;
+	  top: -38px;
+	  content: 'Click on a tab!';
+	  font-size: 1.8em;
+	  text-align: center;
+	  padding: 40px 0; 
+	}
+
+button {
+  cursor: pointer;
+  position: absolute;
+  left: -650px;
+  width: 195px;
+  text-align: start;
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  background-color: #240907;
+  color: goldenrod;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  margin: 5px;
+  transition: .25s ease;
+}
+
+div:focus button, button:focus {
+  width: 310px;
+  color: lightgoldenrodyellow;
+  outline: none;
+}
+
+button:focus + p, div:focus P {
+  display: block;
+  position: absolute;
+  left: -425px;
+  margin-top: 43px;
+  background-color: #240907;
+  height: fit-content;
+  min-height: 1000px;
+  width: 155%;
+  z-index: 2;
+  outline: none;
+  border-radius: 25px;
+  top: -38px;
+  text-align: center;
+  padding-top: 48px;
+}
+
+p {
+  display: none;
+  font-size: 2em;
+}
+
+div {
+  display: inline-block;
+}
+
+div:focus {
+  outline: none;
+}
+
+
+.p {
+  margin-top: 300px;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.bookmark-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
+  z-index: 3;
+  position: absolute;
+  left: -375px;
+  top: 25px;
+  width: 140%;
+  height: 150px;
+  background-color: #3c0f0b;
+  border-radius: 25px;
+}
+  
+.group-label {
+  height: 100%;
+  width: 4%;
+  text-align: center;
+  border-radius: 25px 0 0 25px;
+  background-color: rgba(99,20,13,.5);
+  font-size: 28px;
+  writing-mode: sideways-lr;
+  color: orange;
+}
+
+  .bookmark {
+    background-size: 65%;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    text-align: center;
+    writing-mode: horizontal-tb;
+    left: 62px;
+    bottom: 35px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    padding-top: 100px;
+    color: goldenrod;
+    background-color: #63140d;
+    border-radius: 20px;
+    box-shadow: inset 0px -5px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+.bookmark::before {
+  content: '☐';
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  font-size: 72px;
+}
+
+#daily::before {
+  content: '☀';
+}
+
+#weekly::before {
+  content: '🌣';
+}
+
+#pollen::before {
+  content: '🟐';
+}
+
+#tasks::before {
+  content: '🗸';
+  top: 3px;
+}
+
+
+#planner::before {
+  content: '⊞';
+}
+
+  .bookmark > a {
+    color: goldenrod;
+    text-decoration: none;
+  }
