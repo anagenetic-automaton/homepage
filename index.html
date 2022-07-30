@@ -30,6 +30,19 @@
 			  updateClock();
 			  window.setInterval("updateClock()", 1);
 			}
+			
+			/* dialog buttons script https://codepen.io/atapas/pen/QWEXPZW */
+			const show = id => {
+			const dialog = document.getElementById(id);
+			dialogPolyfill.registerDialog(dialog);
+				dialog.showModal();
+			}
+
+			const closeDialog = id => {
+				const dialog = document.getElementById(id);
+				dialog.close();
+			}
+
 		</script>
 	</head>
 
@@ -62,33 +75,14 @@
 	</header>
 
 	<main>
-		 <dialog>
-
-		    <form method="dialog">
-
-		      This is a dialog!
-
-		      <input type="submit" value="Close" />
-
-		    </form>
-
-		  </dialog>
-
-		  <h1>Hi there!</h1>
-
-		  <p><button>Open dialog</button></p>
-
-		  <script>
-
-		    var button = document.querySelector('button');
-
-		    button.onclick = function() { document.querySelector('dialog').showModal(); };
-
-		  </script>
-		
 		<div class="menu">
-			 <button id="ButtonGENERAL">GENERAL</button>
-				<dialog>
+			 <button onclick="show('simple')" id="ButtonGENERAL">GENERAL</button>
+			 <button onclick="show('simple')">PROFESSIONAL</button>
+			 <button onclick="show('simple')">FINANCIAL</button>
+			 <button onclick="show('simple')">REFERENCE</button>
+			 <button onclick="show('simple')">BUREAUCRATIC</button>
+
+				<dialog id="simple">
 					<div class="tray">
 						<div class="bookmark-group">
 							<div class="group-label">LOADOUT</div>
@@ -118,17 +112,14 @@
 							</div>
 
 						</div>
+						<form method="dialog">
+							<button>Close</button>
+						</form>
 					</div>
 				</dialog>
 
 
-			 <button>PROFESSIONAL</button>
 
-			 <button>FINANCIAL</button>
-
-			 <button>REFERENCE</button>
-
-			 <button>BUREAUCRATIC</button>
 
 		</div>
 
