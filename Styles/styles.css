@@ -71,8 +71,8 @@ main {
   color: white;
 }
 
-/*
-	main:after {
+
+	dialog {
 	  display: block;
 	  position: absolute;
 	  left: -425px;
@@ -89,7 +89,7 @@ main {
 	  text-align: center;
 	  padding: 40px 0; 
 	}
-*/
+
 
 div {
   display: inline-block;
