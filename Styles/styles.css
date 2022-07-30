@@ -75,13 +75,14 @@ main {
 	dialog {
 	  display: block;
 	  position: absolute;
-	  left: -425px;
+	  left: 0;
 	  margin-top: 43px;
 	  background-color: #240907;
 	  height: 100%;
 	  width: 155%;
-	  z-index: 0;
-	  outline: none;
+	  z-index: 2;
+	  outline-width: 0px;
+	  outline-color: rgba(0,0,0,0);
 	  border-radius: 25px;
 	  top: -38px;
 	  content: 'Click on a tab!';
